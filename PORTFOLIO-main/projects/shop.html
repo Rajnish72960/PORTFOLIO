@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101820">
+  <title>ShopSphere | Storefront Demo</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+  <nav class="store-nav" aria-label="Store navigation">
+    <a class="store-logo" href="#top">shop<span>sphere</span></a>
+    <form class="store-search" id="search-form" role="search">
+      <input id="search-input" type="search" placeholder="Search products" aria-label="Search products">
+      <button aria-label="Search"><i class="bx bx-search" aria-hidden="true"></i></button>
+    </form>
+    <button class="store-cart" id="cart-open" aria-controls="cart-panel" aria-expanded="false">Bag <span id="cart-count">0</span></button>
+  </nav>
+  <main class="demo-main" id="top">
+    <section class="store-hero">
+      <div><p class="demo-kicker">A frontend shopping demo</p><h1>Good finds. Thoughtful design.</h1><p>Browse a curated selection of everyday favorites. Search the collection and add items to your bag.</p></div>
+      <div class="store-hero-mark" aria-hidden="true">✦</div>
+    </section>
+    <div class="store-section-head"><h2>Featured products</h2><p id="result-count" aria-live="polite"></p></div>
+    <section class="store-grid" id="product-grid" aria-label="Featured products"></section>
+  </main>
+  <aside class="cart-panel" id="cart-panel" aria-label="Shopping bag" aria-hidden="true" inert>
+    <div class="cart-panel-head"><h2>Your bag</h2><button class="cart-close" id="cart-close" aria-label="Close shopping bag">×</button></div>
+    <div class="cart-items" id="cart-items" aria-live="polite"></div>
+    <div class="cart-total"><span>Total</span><span id="cart-total">$0.00</span></div>
+    <p class="demo-subtitle" style="margin-top:12px">Demo checkout only. Your bag stays in this browser session.</p>
+  </aside>
+  <script src="shop.js"></script>
+</body>
+</html>
