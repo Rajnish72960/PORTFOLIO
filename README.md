@@ -1,0 +1,1 @@
+A personal portfolio website showcasing skills, projects, and achievements with a responsive design, smooth navigation, and interactive UI to highlight a developer’s professional profile and web development expertise.
