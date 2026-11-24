@@ -1,16 +1,27 @@
-// script.js
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
 
-// Select the menu icon and navbar
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+function toggleMenu() {
+  const isOpen = navbar.classList.toggle('active');
+  menuIcon.classList.toggle('bx-menu', !isOpen);
+  menuIcon.classList.toggle('bx-x', isOpen);
+  menuIcon.setAttribute('aria-expanded', String(isOpen));
+  menuIcon.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+}
 
-// Toggle active class when menu icon is clicked
-menuIcon.onclick = () => {
-  navbar.classList.toggle('active');
-  // Toggle menu icon between hamburger and close
-  if (navbar.classList.contains('active')) {
-    menuIcon.classList.replace('bx-menu', 'bx-x');
-  } else {
-    menuIcon.classList.replace('bx-x', 'bx-menu');
+menuIcon.addEventListener('click', toggleMenu);
+menuIcon.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    toggleMenu();
   }
-};
+});
+
+navbar.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    navbar.classList.remove('active');
+    menuIcon.classList.replace('bx-x', 'bx-menu');
+    menuIcon.setAttribute('aria-expanded', 'false');
+    menuIcon.setAttribute('aria-label', 'Open navigation menu');
+  });
+});
